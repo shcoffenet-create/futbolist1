@@ -1,143 +1,76 @@
-
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#101827">
-<title>فوتبالیست | فوتبال ایران</title>
+<title>فوتبالیست | لیگ برتر ایران</title>
 <style>
-*{box-sizing:border-box}
-body{
-margin:0;
-font-family:Tahoma,Arial,sans-serif;
-background:#101827;
-color:#fff;
-}
-header{
-background:#182438;
-padding:22px 16px;
-text-align:center;
-border-bottom:1px solid #293950;
-}
-header h1{margin:0;color:#43d9a3;font-size:27px}
-header p{color:#aab8ca;font-size:13px}
-.container{max-width:850px;margin:auto;padding:18px}
-h2{font-size:19px;margin-top:25px}
-.search{
-width:100%;padding:14px;border-radius:12px;
-border:1px solid #34445c;background:#1b293d;
-color:white;font-size:15px;outline:none;
-}
-.note{
-background:#203248;padding:13px;border-radius:12px;
-color:#cbd5e1;font-size:12px;line-height:2;
-}
-.clubs{
-display:grid;grid-template-columns:repeat(2,1fr);
-gap:12px;margin-top:15px;
-}
-.club{
-background:#1b293d;border:1px solid #30425b;
-border-radius:13px;padding:17px 10px;
-text-align:center;cursor:pointer;
-}
-.club:hover{border-color:#43d9a3}
-.club .logo{font-size:30px}
-.club h3{font-size:14px;margin:9px 0 0}
-button{
-border:0;background:#43d9a3;color:#10251f;
-padding:11px 16px;border-radius:9px;
-font-weight:bold;cursor:pointer;
-}
-#details{
-display:none;background:#1b293d;
-padding:18px;border-radius:13px;margin-top:15px;
-}
-footer{text-align:center;color:#8493a8;padding:30px;font-size:12px}
+:root{--bg:#0b1220;--panel:#152238;--line:#2b3d57;--text:#f4f7fb;--muted:#a9b8cb;--green:#43d9a3;--blue:#8bb8ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.8}
+header{background:linear-gradient(135deg,#172b43,#101827);border-bottom:1px solid var(--line);padding:24px 16px;text-align:center}
+header h1{margin:0;color:var(--green);font-size:28px}header p{margin:5px 0 0;color:var(--muted);font-size:13px}
+.container{width:min(1100px,100%);margin:auto;padding:18px}
+.hero{background:linear-gradient(120deg,#173b3b,#172b43);border:1px solid #28534d;border-radius:18px;padding:20px;margin:5px 0 22px}
+.hero h2{margin:0 0 6px;font-size:21px}.hero p{margin:0;color:#c4d5df;font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.stat{background:#0e1d2b;border:1px solid #2a4b50;border-radius:12px;padding:10px;text-align:center}.stat b{display:block;color:var(--green);font-size:20px}.stat span{font-size:11px;color:var(--muted)}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:22px 0 12px}h2{font-size:18px;margin:0}
+.search{width:100%;max-width:360px;padding:12px 14px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:white;font:inherit;outline:none}.search:focus{border-color:var(--green)}
+.note{background:#18283d;border:1px solid var(--line);border-radius:12px;padding:11px 14px;color:#cbd5e1;font-size:12px;margin-bottom:13px}
+.table-wrap{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:14px}table{width:100%;min-width:760px;border-collapse:collapse;text-align:center;font-size:13px}th{background:#20334c;color:#c5d4e8;font-weight:600;white-space:nowrap}th,td{padding:10px 9px;border-bottom:1px solid #293a52}tbody tr:hover{background:#1b3046}tbody tr:last-child td{border-bottom:0}.rank{color:var(--green);font-weight:bold}
+.team-btn{background:none;color:var(--text);padding:0;border:0;font:inherit;font-weight:bold;cursor:pointer;text-align:right}.team-btn:hover{color:var(--green)}.points{font-weight:bold;color:var(--green)}
+.clubs{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px}.club{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px;text-align:center;cursor:pointer}.club:hover{border-color:var(--green)}.club-mark{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;margin:0 auto 7px;background:#263d56;color:var(--green);font-weight:bold}.club strong{font-size:12px}
+#details{display:none;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:17px;margin-top:16px}button.action{border:0;background:var(--green);color:#10251f;padding:9px 14px;border-radius:9px;font-weight:bold;cursor:pointer}
+.source a{color:var(--blue);text-decoration:none}.source a:hover{text-decoration:underline}footer{text-align:center;color:#8493a8;padding:26px 12px;font-size:11px}
+@media(max-width:600px){header h1{font-size:25px}.container{padding:13px}.stats{gap:6px}.stat{padding:8px 3px}.stat b{font-size:17px}.hero{padding:16px}}
 </style>
 </head>
 <body>
-
-<header>
-<h1>⚽ فوتبالیست</h1>
-<p>مرجع معرفی بازیکنان فوتبال ایران</p>
-</header>
-
+<header><h1>⚽ فوتبالیست</h1><p>مرجع معرفی باشگاه‌ها و بازیکنان فوتبال ایران</p></header>
 <main class="container">
-
-<h2>جستجوی باشگاه</h2>
-<input class="search" id="search"
-placeholder="نام باشگاه را وارد کنید..."
-oninput="filterClubs()">
-
-<h2>باشگاه‌های لیگ برتر ایران</h2>
-
-<div class="note">
-اطلاعات باشگاه‌ها در این نسخه اولیه نمایشی است.
-جدول واقعی لیگ و آمار بازیکنان در مراحل بعدی متصل خواهند شد.
-</div>
-
+<section class="hero">
+<h2>لیگ برتر فوتبال ایران</h2><p>جدول رده‌بندی فصل ۱۴۰۵–۱۴۰۶ (۱۴۰۵–۰۶)</p>
+<div class="stats">
+<div class="stat"><b>۱۸</b><span>تیم حاضر در لیگ</span></div>
+<div class="stat"><b>۱۱۶</b><span>بازی برگزارشده در snapshot منبع</span></div>
+<div class="stat"><b>۳۰۶</b><span>کل بازی‌های فصل</span></div>
+</div></section>
+<div class="section-head"><h2>جدول رده‌بندی</h2><input class="search" id="tableSearch" placeholder="جستجوی تیم در جدول..." oninput="filterTable()"></div>
+<div class="note">آخرین اطلاعات ثبت‌شده در این نسخه: جمعه ۶ آذر ۱۴۰۵، ساعت ۱۸:۴۲. جدول ممکن است پس از برگزاری مسابقات تغییر کند.</div>
+<div class="table-wrap"><table><thead><tr><th>رتبه</th><th>تیم</th><th>بازی</th><th>برد</th><th>مساوی</th><th>باخت</th><th>گل زده</th><th>گل خورده</th><th>تفاضل</th><th>امتیاز</th></tr></thead><tbody id="tableBody"></tbody></table></div>
+<div class="section-head"><h2>باشگاه‌های لیگ</h2><input class="search" id="clubSearch" placeholder="نام باشگاه را جستجو کن..." oninput="filterClubs()"></div>
 <div class="clubs" id="clubs"></div>
-
-<div id="details">
-<h3 id="clubName"></h3>
-<p>اطلاعات بازیکنان این باشگاه هنوز به منبع داده متصل نشده است.</p>
-<button onclick="closeDetails()">بازگشت</button>
-</div>
-
-</main>
-
-<footer>
-فوتبالیست | نسخه آزمایشی
-</footer>
-
+<section id="details"><h2 id="clubName"></h2><p id="clubInfo">اطلاعات تکمیلی بازیکنان این باشگاه در مرحله بعد اضافه می‌شود.</p><button class="action" onclick="closeDetails()">بستن</button></section>
+<div class="note source" style="margin-top:20px">منبع جدول: <a href="https://soot360.com/league/6/لیگ-برتر-ایران" target="_blank" rel="noopener">سوت ۳۶۰ – جدول لیگ برتر ایران</a>. آمار از snapshot منتشرشده منبع وارد شده است. لوگوها و پروفایل بازیکنان هنوز متصل نشده‌اند.</div>
+</main><footer>فوتبالیست | نسخه آزمایشی در حال توسعه</footer>
 <script>
 const teams=[
-"استقلال","پرسپولیس","سپاهان","تراکتور",
-"فولاد خوزستان","گل‌گهر سیرجان","ذوب‌آهن",
-"آلومینیوم اراک","ملوان بندرانزلی","شمس‌آذر قزوین",
-"خیبر خرم‌آباد","چادرملو اردکان","مس رفسنجان",
-"هوادار","نساجی مازندران","پیکان",
-"صنعت نفت آبادان","استقلال خوزستان"
+{name:"سپاهان",p:13,w:8,d:3,l:2,gf:25,ga:9,gd:16,pts:27},
+{name:"پرسپولیس",p:14,w:8,d:3,l:3,gf:24,ga:8,gd:16,pts:27},
+{name:"فولاد",p:14,w:6,d:7,l:1,gf:14,ga:8,gd:6,pts:25},
+{name:"تراکتور",p:11,w:7,d:2,l:2,gf:14,ga:5,gd:9,pts:23},
+{name:"استقلال",p:11,w:5,d:6,l:0,gf:14,ga:5,gd:9,pts:21},
+{name:"آلومینیوم اراک",p:14,w:4,d:7,l:3,gf:13,ga:10,gd:3,pts:19},
+{name:"چادرملو اردکان",p:14,w:4,d:7,l:3,gf:15,ga:18,gd:-3,pts:19},
+{name:"فجر سپاسی",p:12,w:4,d:6,l:2,gf:13,ga:14,gd:-1,pts:18},
+{name:"گل‌گهر سیرجان",p:12,w:5,d:2,l:5,gf:12,ga:10,gd:2,pts:17},
+{name:"خیبر خرم‌آباد",p:13,w:4,d:5,l:4,gf:15,ga:15,gd:0,pts:17},
+{name:"پیکان",p:14,w:3,d:6,l:5,gf:11,ga:15,gd:-4,pts:15},
+{name:"استقلال خوزستان",p:14,w:3,d:5,l:6,gf:11,ga:18,gd:-7,pts:14},
+{name:"ذوب‌آهن",p:13,w:2,d:7,l:4,gf:9,ga:10,gd:-1,pts:13},
+{name:"نساجی مازندران",p:13,w:2,d:7,l:4,gf:8,ga:11,gd:-3,pts:13},
+{name:"صنعت نفت آبادان",p:12,w:3,d:4,l:5,gf:8,ga:16,gd:-8,pts:13},
+{name:"ملوان بندرانزلی",p:14,w:3,d:3,l:8,gf:13,ga:21,gd:-8,pts:10},
+{name:"شمس‌آذر قزوین",p:13,w:1,d:4,l:8,gf:7,ga:17,gd:-10,pts:7},
+{name:"مس شهر بابک",p:13,w:0,d:6,l:7,gf:9,ga:25,gd:-16,pts:6}
 ];
-
-function showClubs(list){
-const area=document.getElementById("clubs");
-area.innerHTML="";
-list.forEach(team=>{
-const card=document.createElement("div");
-card.className="club";
-card.innerHTML="<div class='logo'>⚽</div><h3>"+team+"</h3>";
-card.onclick=()=>openDetails(team);
-area.appendChild(card);
-});
-}
-
-function filterClubs(){
-const q=document.getElementById("search").value.trim();
-showClubs(teams.filter(t=>t.includes(q)));
-}
-
-function openDetails(name){
-document.getElementById("clubName").textContent=name;
-document.getElementById("details").style.display="block";
-document.getElementById("details").scrollIntoView({behavior:"smooth"});
-}
-
-function closeDetails(){
-document.getElementById("details").style.display="none";
-}
-
-showClubs(teams);
+const fa=n=>String(n).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
+function renderTable(list){const body=document.getElementById("tableBody");body.innerHTML="";list.forEach(t=>{const rank=teams.indexOf(t)+1,tr=document.createElement("tr");tr.innerHTML='<td class="rank">'+fa(rank)+'</td><td></td><td>'+fa(t.p)+'</td><td>'+fa(t.w)+'</td><td>'+fa(t.d)+'</td><td>'+fa(t.l)+'</td><td>'+fa(t.gf)+'</td><td>'+fa(t.ga)+'</td><td>'+fa(t.gd)+'</td><td class="points">'+fa(t.pts)+'</td>';const btn=document.createElement("button");btn.className="team-btn";btn.textContent=t.name;btn.onclick=()=>openDetails(t);tr.children[1].appendChild(btn);body.appendChild(tr)})}
+function filterTable(){const q=document.getElementById("tableSearch").value.trim();renderTable(teams.filter(t=>t.name.includes(q)))}
+function renderClubs(list){const area=document.getElementById("clubs");area.innerHTML="";list.forEach(t=>{const card=document.createElement("div");card.className="club";const mark=document.createElement("div");mark.className="club-mark";mark.textContent=t.name.slice(0,1);const name=document.createElement("strong");name.textContent=t.name;card.append(mark,name);card.onclick=()=>openDetails(t);area.appendChild(card)})}
+function filterClubs(){const q=document.getElementById("clubSearch").value.trim();renderClubs(teams.filter(t=>t.name.includes(q)))}
+function openDetails(t){document.getElementById("clubName").textContent=t.name;document.getElementById("clubInfo").textContent='رتبه '+fa(teams.indexOf(t)+1)+' · '+fa(t.pts)+' امتیاز · '+fa(t.p)+' بازی. اطلاعات بازیکنان این باشگاه هنوز به منبع تأییدشده متصل نشده است و در مرحله بعد اضافه می‌شود.';document.getElementById("details").style.display="block";document.getElementById("details").scrollIntoView({behavior:"smooth",block:"center"})}
+function closeDetails(){document.getElementById("details").style.display="none"}
+renderTable(teams);renderClubs(teams);
 </script>
-</body>
-</html>
-
-
-
-
-
-
-
+</body></html>
